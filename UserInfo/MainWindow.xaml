@@ -8,6 +8,21 @@
         Title="MainWindow" Height="450" Width="800" WindowStyle="None" Background="Azure" Loaded="Init">
     <Grid>
         <ComboBox HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="231" Name="UserList" SelectionChanged="slcchng"/>
-        <RichTextBox Margin="264,10,10,10" Name="UserInfo" Visibility="Hidden" > </RichTextBox>
+        <RichTextBox Margin="264,10,10,10" Name="UserInfo" Visibility="Hidden" ></RichTextBox>
+        <Button Name="svBtn" Content="Save" FontSize="4" Background="Red" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="231" Height="168"/>
+        
+        <Button Name="Lupa" HorizontalAlignment="Left" Margin="68,308,0,0" VerticalAlignment="Top" Width="75" Click="click" >
+        
+            <Button Content="это лупа" Height="72" Width="72" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-135.529"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </Button>
     </Grid>
 </Window>

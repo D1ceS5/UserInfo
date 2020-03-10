@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -28,7 +29,9 @@ namespace UserInfo
 
         private void Init(object sender, RoutedEventArgs e)
         {
-           string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile).Remove(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile).LastIndexOf("\\"), Environment.GetFolderPath(Environment.SpecialFolder.UserProfile).Length - Environment.GetFolderPath(Environment.SpecialFolder.UserProfile).LastIndexOf("\\"));
+           string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
+                .Remove(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile).LastIndexOf("\\"), Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
+                .Length - Environment.GetFolderPath(Environment.SpecialFolder.UserProfile).LastIndexOf("\\"));
             MessageBox.Show(path);
             foreach (var item in Directory.GetDirectories(path))
             {
@@ -40,8 +43,17 @@ namespace UserInfo
         {
             if(UserList.SelectedIndex!=-1)
             {
-
+                UserInfo.Visibility = Visibility.Visible;
             }
+            else
+            UserInfo.Visibility = Visibility.Hidden;
+        }
+
+        private void click(object sender, RoutedEventArgs e)
+        {
+            svBtn.FontSize++;
+            DoubleAnimation animation = new DoubleAnimation(0, 360, TimeSpan.FromSeconds(0.3));
+            
         }
     }
 }

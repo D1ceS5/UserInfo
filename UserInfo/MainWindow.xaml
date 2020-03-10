@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserInfo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" Background="Azure" Loaded="Init">
     <Grid>
-        
+        <ComboBox HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="231" Name="UserList" SelectionChanged="slcchng"/>
+        <RichTextBox Margin="264,10,10,10" Name="UserInfo" Visibility="Hidden" > </RichTextBox>
     </Grid>
 </Window>
